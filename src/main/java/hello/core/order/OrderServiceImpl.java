@@ -9,10 +9,18 @@ import hello.core.member.MemmoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
 
-    private final MemberRepository memberRepository = new MemmoryMemberRepository();
+    //private final MemberRepository memberRepository = new MemmoryMemberRepository();
+    //private final MemberRepository memberRepository = new MemmoryMemberRepository();
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();  //할인정책을 변경하려고 보니 추상과 구현 클래스 둘 다 의존하고 있음 -> DIP 위반
     //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();  //할인정책 변경
     private DiscountPolicy discountPolicy;  //final은 무조건 값이 할당되어야 하기 때문에 삭제, discountpolicy라는 인터페이스만 의존하게 됨
+    private final MemberRepository memberRepository;
+
+    //생성자
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

@@ -2,6 +2,7 @@ package hello.core;
 
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
+import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.*;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
@@ -25,6 +26,7 @@ public class AppConfig {
 
     //중복 제거 및 역할 보이게 리팩터링
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        //return new FixDiscountPolicy();
+        return new RateDiscountPolicy();  //FixDiscountPolicy에서 RateDiscountPolicy로 변경 원하면 여기만 수정하면 됨
     }
 }

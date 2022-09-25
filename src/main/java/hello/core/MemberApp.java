@@ -10,8 +10,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MemberApp {
 
     public static void main(String[] args) {
-        //AppConfig appConfig = new AppConfig();
-        //MemberService memberService = appConfig.memberService();  //memberServiceImpl이 들어가있는 memberService
+        //AppConfig appConfig.xml = new AppConfig();
+        //MemberService memberService = appConfig.xml.memberService();  //memberServiceImpl이 들어가있는 memberService
         //MemberService memberService = new MemberServiceImpl();
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);  //ApplicationContext:스프링 컨테이너, AppConfig에 있는 환경설정으로 적용

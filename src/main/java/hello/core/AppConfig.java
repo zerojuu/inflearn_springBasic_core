@@ -12,21 +12,28 @@ import org.springframework.context.annotation.Configuration;
 @Configuration  //설정정보
 public class AppConfig {
 
+    //@Bean memberService -> memberRepository를 호출하면서 결과적으로는 new MemmoryMemberRepository를 호출해줌
+    //@Bean orderService -> memberRepository를 호출하면서 new MemmoryMemberRepository를 호출해줌 + discountPolicy
+    //이러면 MemmoryMemberRepository이 두번 호출되면서 싱글톤이 깨지는 건가..?
+
     //memberservice 생성 -> memberserviceimpl에서 MemberRepository만 선언 및 생성자 생성 -> 생성자를 통해서 MemmoryMemberRepository 주입
     @Bean  //bean 선언시 스프링 컨테이너에 자동등록이 됨
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     //중복 제거 및 역할 보이게 리팩터링
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemmoryMemberRepository();  //리턴 타입은 인터페이스로 해야 함
     }
 
     //orderservice 생성
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 

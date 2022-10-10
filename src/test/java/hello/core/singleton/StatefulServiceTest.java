@@ -24,11 +24,11 @@ class StatefulServiceTest {
        statefulService2.order("userB", 20000);
         
         //ThreadA : A사용자 주문 금액 조회
-        int price = statefulService1.getPrice();
-        System.out.println("price = " + price);  //service를 1,2로 나누어도 인스턴스는 같기 때문에 마지막인 B사용자의 20000원이 조회됨
+        //int price = statefulService1.getPrice();
+       // System.out.println("price = " + price);  //service를 1,2로 나누어도 인스턴스는 같기 때문에 마지막인 B사용자의 20000원이 조회됨
 
         //검증
-        Assertions.assertThat(statefulService1.getPrice()).isEqualTo(20000);
+        //Assertions.assertThat(statefulService1.getPrice()).isEqualTo(20000);
     }
 
     //무상태로 재설계
@@ -46,7 +46,7 @@ class StatefulServiceTest {
         int userBprice = statefulService2.order("userB", 20000);
 
         //ThreadA : A사용자 주문 금액 조회
-        System.out.println("price = " + userAprcie);
+        System.out.println("price = " + userAprice);
     }
     
     //테스트용 config

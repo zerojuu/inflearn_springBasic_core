@@ -17,7 +17,7 @@ public class MemberApp {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);  //ApplicationContext:스프링 컨테이너, AppConfig에 있는 환경설정으로 적용
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);  //AppConfig에서 꺼낼 객체 이름, 타입
 
-        Member member = new Member(1L, "memberA", Grade.VIP);
+        Member member = new Member(1L, "memberA", Grade.VIP);   //id는 long 타입이라서 1뒤에 L 붙임 (없으면 컴파일 오류)
         memberService.join(member);  //회원가입
 
         Member findMember = memberService.findMember(1L);

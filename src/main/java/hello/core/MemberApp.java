@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MemberApp {
 
     public static void main(String[] args) {
-        //AppConfig appConfig.xml = new AppConfig();
+        //AppConfig appConfig.xml = new AppConfig();    //memberservice가 필요하면 appconfig에서 꺼내쓰기
         //MemberService memberService = appConfig.xml.memberService();  //memberServiceImpl이 들어가있는 memberService
         //MemberService memberService = new MemberServiceImpl();
 

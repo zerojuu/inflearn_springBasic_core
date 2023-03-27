@@ -17,7 +17,7 @@ public class OrderApp {
         //MemberService memberService = new MemberServiceImpl();
         //OrderService orderService = new OrderServiceImpl();
 
-//        AppConfig appConfig.xml = new AppConfig();
+//        AppConfig appConfig.xml = new AppConfig();    //memberservice가 필요하면 appconfig에서 꺼내쓰기
 //        MemberService memberService = appConfig.xml.memberService();
 //        OrderService orderService = appConfig.xml.orderService();
 

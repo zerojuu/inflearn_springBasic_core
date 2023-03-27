@@ -12,6 +12,7 @@ public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository;
 
     //생성자
+    //MemberRepository에 구현체가 뭐가 들어갈지는 생성자를 통해서 감
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

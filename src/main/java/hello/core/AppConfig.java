@@ -23,6 +23,7 @@ public class AppConfig {
     }
 
     //중복 제거 및 역할 보이게 리팩터링
+    //나중에 DB가 변경되면 여기만 변경하면 됨
     @Bean
     public MemberRepository memberRepository() {
         return new MemmoryMemberRepository();  //리턴 타입은 인터페이스로 해야 함

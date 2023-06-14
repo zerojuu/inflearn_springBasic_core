@@ -11,8 +11,8 @@ public class BeanDefinitionTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
     //GenericXmlApplicationContext ac = new GenericXmlApplicationContext("appConfig.xml");  //generic bean이라고 bean 정보가 자세히, factorybeanname등이 자세하지 않음
 
-    //appconfig는 facotryMethod 방식
-
+    //스프링에 빈을 등록하는 방법은 크게 두가지 : 직접 스프링빈 등록(xml 같은), factoryMethod(약간 우회하는 방식)
+    //Appconfig.java는 factoryMethod 방식
 
     @Test
     @DisplayName("빈 설정 메타정보 확인")

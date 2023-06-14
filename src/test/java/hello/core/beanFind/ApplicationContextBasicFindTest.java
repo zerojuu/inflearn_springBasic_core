@@ -20,7 +20,7 @@ class ApplicationContextBasicFindTest {  //public 없어도 됨
         System.out.println("memberService = " + memberService);
         System.out.println("memberService.getClass() = " + memberService.getClass());
 
-        //검증
+        //검증 : memberService가 memberServiceImpl의 객체(instance)인지
         Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);  //memberservice에 memberserviceimpl을 등록했으니
     }
 
@@ -35,8 +35,10 @@ class ApplicationContextBasicFindTest {  //public 없어도 됨
         Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);  //인터페이스(memberservice)이면 구현체(memberserviceimpl)이 대상
     }
 
+    //위의 두개는 인터페이스(memberService)로 조회한 것
+    //이거는 객체(MemberServiceImpl)로 조회
     @Test
-    @DisplayName("구체 타입으로 조회")  //구체적으로 조회하는 건 지양
+    @DisplayName("구체 타입으로 조회")  //구체적으로 조회하는 건 지양(역활과 구현을 구분해야 하고 역활에 의존해야 함, 이거는 구현에 의존한 것)
     void findBeanByName2() {
         MemberService memberService = ac.getBean("memberService", MemberServiceImpl.class);
         System.out.println("memberService = " + memberService);

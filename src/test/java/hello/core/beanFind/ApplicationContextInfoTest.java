@@ -8,6 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class ApplicationContextInfoTest {
 
+    //ApplicationContext는 AnnotationConfigApplicationContext의 상위 인터페이스 -> 개발시 가급적 기능을 적게 제공하는 상위 인터페이스를 사용해야 향후 구현 클래스가 변경되어도 클라이언트 코드를 변경하지 않아도 됨
+    //실제 스프링 애플리케이션을 개발할 때는 ApplicationContext를 사용 (스프링 코어를 설명하다보니 AnnotationConfigApplicationContext를 통해 제공되는 기능도 필요해서 사용하게 됨)
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
     @Test

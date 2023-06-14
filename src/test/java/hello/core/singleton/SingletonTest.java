@@ -40,8 +40,8 @@ public class SingletonTest {
         System.out.println("singletonService2 = " + singletonService2);
 
         Assertions.assertThat(singletonService1).isSameAs(singletonService2);
-        //sameAs : 자바의 ==, 참조어 비교
-        //isEqualto : 자바의 equals
+        //isSameAs : 자바의 == (참조어 비교)
+        //isEqualto : 자바의 equals 비교
     }
 
     @Test

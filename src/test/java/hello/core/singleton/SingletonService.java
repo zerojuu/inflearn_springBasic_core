@@ -2,14 +2,15 @@ package hello.core.singleton;
 
 public class SingletonService {
 
+    //1. static 영역에 객체를 딱 1개만 생성해둔다.
     private static final SingletonService instance = new SingletonService(); //자기 자신을 내부의 private으로 static선언 -> 클래스 레벨에 들어가기 때문에 딱 하나만 존재하게 됨
 
-    //조회
+    //2. 조회 : public으로 열어서 객체 인스터스가 필요하면 이 static 메서드를 통해서만 조회하도록 허용한다
     public static SingletonService getInstance() {
         return instance;
     }
 
-    //**private 생성자로 생성 막아버리기
+    //3. 생성자를 **private으로 선언해서 외부에서 new 키워드를 사용한 객체 생성을 못하게 막는다.
     private SingletonService() {
     }
 

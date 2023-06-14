@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="memberService" class="hello.core.member.MemberServiceImpl">
-        <constructor-arg name="memberRepository" ref="memberRepository" />  <!--생성자를 넘겨줘야 함..memberRepository가 없기에 아래에 빈으로 등록해줘야 함-->
+        <constructor-arg name="memberRepository" ref="memberRepository" />  <!--생성자(memberRepository)를 넘겨줘야 함..memberRepository가 없기에 아래에 빈으로 등록해줘야 함-->
     </bean>
 
     <bean id="memberRepository" class="hello.core.member.MemmoryMemberRepository"/>
@@ -14,5 +14,5 @@
         <constructor-arg name="discountPolicy" ref="discountPolicy"/>
     </bean>
 
-    <bean id="discountPolicy" class="hello.core.discount.RateDiscountPolicy"></bean>
+    <bean id="discountPolicy" class="hello.core.discount.RateDiscountPolicy"/>
 </beans>

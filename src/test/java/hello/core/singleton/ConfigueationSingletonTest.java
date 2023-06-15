@@ -15,8 +15,8 @@ public class ConfigueationSingletonTest {
     void configurationTest() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        //impl로 꺼내야 getMemberRepository 사용 가능
-        //원래는 이렇게 구체타입으로 꺼내면 안 좋음
+        //각 service의 impl에만 넣어놔서 impl로 꺼내야 getMemberRepository 사용 가능
+        //원래는 이렇게 구체타입(impl)으로 꺼내면 안 됨
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
         OrderServiceImpl orderService = ac.getBean("orderService", OrderServiceImpl.class);
         MemberRepository memberRepository = ac.getBean("memberRepository", MemberRepository.class);

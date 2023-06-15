@@ -27,7 +27,7 @@ public class MemberServiceImpl implements MemberService{
         return memberRepository.findById(memberId);
     }
 
-    //테스트 용도이기에 인터페이스에는 안 만듦
+    //ConfigueationSingletonTest 테스트 용도이기에 인터페이스에는 안 만듦
     public MemberRepository getMemberRepository() {
         return memberRepository;
     }

@@ -33,7 +33,7 @@ public class OrderServiceImpl implements OrderService{
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
 
-    //테스트 용도이기에 인터페이스에는 안 만듦
+    //ConfigueationSingletonTest 테스트 용도이기에 인터페이스에는 안 만듦
     public MemberRepository getMemberRepository() {
         return memberRepository;
     }

@@ -25,7 +25,7 @@ class StatefulServiceTest {
         
         //ThreadA : A사용자 주문 금액 조회
         //int price = statefulService1.getPrice();
-       // System.out.println("price = " + price);  //service를 1,2로 나누어도 인스턴스는 같기 때문에 마지막인 B사용자의 20000원이 조회됨
+       // System.out.println("price = " + price);  //service를 1,2로 나누어도 인스턴스(StatefulService)는 같기 때문에 마지막인 B사용자의 20000원이 조회됨
 
         //검증
         //Assertions.assertThat(statefulService1.getPrice()).isEqualTo(20000);

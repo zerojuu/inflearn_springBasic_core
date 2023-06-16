@@ -1,6 +1,11 @@
 package hello.core.member;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 //memberService에 대한 구현체
 //구현체가 하나일 때는 관례적으로 service 뒤에 impl을 붙임
+@Component
 public class MemberServiceImpl implements MemberService{
 
     //가입하고 조회하려면 memberRepository가 필요함
@@ -13,6 +18,7 @@ public class MemberServiceImpl implements MemberService{
 
     //생성자
     //MemberRepository에 구현체가 뭐가 들어갈지는 생성자를 통해서 감
+    @Autowired  //componentscan할 때 자동 의존관계주입.. ac.getBean(MemberRepository.class) 이런 식으로 들어간다고 보면 됨
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
